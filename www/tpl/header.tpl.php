@@ -102,7 +102,11 @@ if (isset($curentUrlParsed['query'])) {
     print '	<link rel="manifest" href="'.$context->getControllerUrl().'manifest.json.php'.'" />' . "\r\n";
 
 	$primaryColor = getDolGlobalString('EACCESS_PRIMARY_COLOR','#F05F40');
-	$backgroundColor = getDolGlobalString('EACCESS_APPLI_COLOR',$primaryColor);
+	if(strpos($primaryColor, '#') === false){
+		$primaryColor = '#'.$primaryColor;
+	}
+
+$backgroundColor = getDolGlobalString('EACCESS_APPLI_COLOR',$primaryColor);
 	print '	<meta name="theme-color" content="'.$backgroundColor.'">' . "\r\n";
 
 

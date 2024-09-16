@@ -56,6 +56,9 @@ if (empty($dolibarr_nocache)) header('Cache-Control: max-age=3600, public, must-
 else header('Cache-Control: no-cache');
 
 $primaryColor = getDolGlobalString('EACCESS_PRIMARY_COLOR','#F05F40');
+if(strpos($primaryColor, '#') === false){
+	$primaryColor = '#'.$primaryColor;
+}
 $primaryColorHover = ColorTools::adjustBrightness($primaryColor,-30);
 $headerImg = getDolGlobalString('EACCESS_HEADER_IMG','../img/header_02.jpg');
 

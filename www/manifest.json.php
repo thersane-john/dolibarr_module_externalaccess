@@ -35,6 +35,10 @@ require_once __DIR__.'/config.php';
 $appli= getDolGlobalString('EACCESS_TITLE',getDolGlobalString('MAIN_INFO_SOCIETE_NOM'));
 
 $primaryColor = getDolGlobalString('EACCESS_PRIMARY_COLOR','#F05F40');
+if(strpos($primaryColor, '#') === false){
+	$primaryColor = '#'.$primaryColor;
+}
+
 $backgroundColor = getDolGlobalString('EACCESS_APPLI_COLOR',$primaryColor);
 
 
